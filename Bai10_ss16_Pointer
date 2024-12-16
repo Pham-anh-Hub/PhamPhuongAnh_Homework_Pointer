@@ -1,0 +1,21 @@
+#include<stdio.h>
+void deleteItem(int *num,int size, int index);
+
+int main(){
+	int num[]={45,23,-9,33,-5,42,76,98,10};
+	int size = sizeof(num)/sizeof(num[0]);
+	for(int i=0; i<size; i++){
+		printf("%d\t",num[i]);
+	}
+	deleteItem(num,size, 4); 
+}
+
+void deleteItem(int *num, int size, int index){
+	for(int i=index-1; i<size-1; i++){
+		*(num+i)=*( num+i+1);
+	}
+	printf("\nMang sau khi xoa la: \n");
+	for(int i=0; i<size-1; i++){
+		printf("%d\t", *(num +i));
+	}
+} 
